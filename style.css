@@ -1,0 +1,84 @@
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #1f7c52;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    background: #111111;
+    flex: 1;
+}
+
+footer {
+    background: #005544;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #48d9d2;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #cccccc;
+}
+
+#page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+#triangle,
+#gasket {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #383838;
+    color: #f1f1f1;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background: #00ffc8;
+    color: #000000;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    background: #0056b3;
+    color: #e6e6e6;
+}
+
+@media only screen and (max-width: 600px) {
+    nav ul{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+}
