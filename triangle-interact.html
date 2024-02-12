@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+triangle.html
+Erik Fredericks, c/o Ed Angel
+
+The triangular hello world of WebGL
+-->
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Triangle Interact</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Define our shaders -->
+    <script id="vertex-shader" type="x-shader/x-vertex">
+      attribute vec4 vPosition;
+      uniform float x;
+      uniform float y;
+
+      void main() {
+        gl_Position.x += x + vPosition.x;
+        gl_Position.y += y + vPosition.y;
+        gl_Position.z = 0.0;
+        gl_Position.w = 1.0;
+        
+      }
+    </script>
+    <script id="fragment-shader" type="x-shader/x-fragment">
+      precision mediump float;
+
+      void main() {
+        gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+        
+      }
+    </script>
+
+    <script src="./libraries/Common/webgl-utils.js"></script>
+    <script src="./libraries/Common/initShaders.js"></script>
+    <script src="./libraries/Common/MV.js"></script>
+
+    <script src="triangle-interact.js"></script>
+
+  </head>
+
+  <body>
+    <canvas id="gl-canvas" width="640" height="480">
+      Your browser doesn't support HTML5!
+    </canvas>
+  </body>
+
+</html>
