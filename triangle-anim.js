@@ -62,30 +62,32 @@ window.onload = function init() {
 
 // Render whatever is in our gl variable
 function render() {
-  x += 0.05 * xDir;
-  y += 0.1 * yDir;
-  if (y > 0.9) { // top hit -- revese y but keep x
-    y = 0.9;
-    yDir *= -1.0;
-  }
-  if (x > 0.9) { // right hit -- reverse x but keep y
-    x = 0.9;
-    xDir *= -1.0;
-  }
-  if (y < -0.9) { // bottom hit -- reverse y but keep x
-    y = -0.9;
-    yDir *= -1.0;
-  }
-  if (x < -0.9) { // left hit -- reverse x but keep y
-    x = -0.9;
-    xDir *= -1.0;
-  }
-  gl.uniform1f(xLoc, x);
-  gl.uniform1f(yLoc, y);
+  setTimeout(function() {
+    x += 0.05 * xDir;
+    y += 0.1 * yDir;
+    if (y > 0.9) { // top hit -- revese y but keep x
+      y = 0.9;
+      yDir *= -1.0;
+    }
+    if (x > 0.9) { // right hit -- reverse x but keep y
+      x = 0.9;
+      xDir *= -1.0;
+    }
+    if (y < -0.9) { // bottom hit -- reverse y but keep x
+      y = -0.9;
+      yDir *= -1.0;
+    }
+    if (x < -0.9) { // left hit -- reverse x but keep y
+      x = -0.9;
+      xDir *= -1.0;
+    }
+    gl.uniform1f(xLoc, x);
+    gl.uniform1f(yLoc, y);
 
-  gl.clear(gl.COLOR_BUFFER_BIT);
-  gl.drawArrays(gl.TRIANGLES, 0, 3);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.drawArrays(gl.TRIANGLES, 0, 3);
 
-  window.requestAnimationFrame(render);
+    window.requestAnimationFrame(render);
 
+  }, 100);
 }

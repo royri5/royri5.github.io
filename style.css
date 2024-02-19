@@ -50,7 +50,11 @@ footer a:hover {
 
 #triangle,
 #gasket,
-#triangle2 {
+#triangle2,
+#triangle3,
+#triangle4,
+#gasket2,
+#gasket3 {
     margin-bottom: 20px;
     padding: 20px;
     background: #383838;
